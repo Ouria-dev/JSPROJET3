@@ -1,0 +1,881 @@
+/*---- FONT --------------------------------------------------*/
+
+@font-face {
+    font-family: "glyphicons";
+    src: url("https://www.ouria.website/pj1/fonts/glyphicons-halflings-regular.eot") format("eot"), url("https://www.ouria.website/pj1/fonts/glyphicons-halflings-regular.svg") format("svg"), url("https://www.ouria.website/pj1/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("https://www.ouria.website/pj1/fonts/glyphicons-halflings-regular.woff") format("woff");
+}
+
+@font-face { 
+    font-family: 'Roboto';
+    src: url('https://www.ouria.website/pj1/fonts/Roboto-Regular.ttf');
+}
+
+@font-face { 
+    font-family: 'Roboto-Bold';
+    src: url('https://www.ouria.website/pj1/fonts/Roboto-Bold.ttf');
+}
+
+
+
+
+/*---- GENERAL STYLE -----------------------------------------*/
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 50px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2.7em;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 3em;
+    text-transform: uppercase;
+    font-family: 'Roboto-Bold', sans-serif;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-family: 'Roboto-Bold', sans-serif;
+}
+
+p {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+
+}
+    
+.bleu-text {
+    color: rgb(94, 171, 206);
+}
+
+#title-query {
+    display: none;
+}
+
+
+
+
+/************ HEADER *************************************
+**********************************************************/
+
+header {
+    width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header-contener {
+    display: flex;
+    justify-content: space-between;
+    position: fixed; /*Pour que le header suive la navigation*/
+    width: 100%;
+    height: 105px;
+    background-color: white;
+    top: 0;
+	right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+	align-items: center;
+    z-index: 1000;
+    flex-wrap: wrap;
+   /* flex-wrap: wrap; retour a la ligne*/
+}
+
+/* Partie logo du header */
+#logo {
+    display: flex;
+    align-items: center;
+    margin-left: 15rem;
+}
+/* Partie menu du header */
+#nav {
+    display: flex;
+    align-items: center; /*centre le menu en hauteur*/
+    margin-right: 15rem;/*place le menu plus a gauche */
+}
+
+#nav ul {    
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
+    width: 100%;
+    list-style-type: none;/*supprime les puces*/
+}
+
+#nav ul li {
+    margin-right: 20%;/*creer un espace entre les menus*/
+}
+
+#nav ul li a {
+    text-decoration: none;/*supprime la décoration des liens*/
+    color: rgb(91, 97, 104);
+    font-size: 1.2em;
+    font-family: 'Roboto';
+}
+
+#nav ul li a:hover {
+    padding-top: 38px; /*place le tirai en haut*/
+    color: black;
+    border-top: 3px solid rgb(94, 178, 218); /*creer le tirai bleu*/
+}
+
+
+/************* ACCUEIL SECTION ************************************
+******************************************************************/
+
+/* Placement de la section */
+#accueil {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+.slide-contener { /* fixe le slide */
+    position: relative;
+    overflow: hidden;/*comportement en depassement*/
+    width: 100%;
+}
+
+/* Placement des images pour le slide*/
+.liens {
+	display: none;/*On rend invisible le radio*/
+}
+
+.liens:checked + .slide-box {
+    position: static;
+    opacity: 1;
+}
+/* on creer la tansition */
+.slide-box {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.4s linear;
+}
+/* dimension des images */
+.slide-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* placement des fleches et du translate */
+.fleche-panel {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 2%;
+	height: 80px;
+    z-index: 100;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.28);
+    color: white;
+    font-size: 33px;
+}
+
+.fa-angle-left {
+	padding-top: 24px;
+	padding-left: 10px;
+}
+
+.fa-angle-right {
+	padding-top: 24px;
+	padding-right: 10px;
+}
+/*demi rond*/
+.fleche-panel.prev { 
+    left: -1px;
+    border-radius: 0 50px 50px 0;
+    text-align: left;
+}
+
+.fleche-panel.next {
+    right: 2px;
+    border-radius: 50px 0 0 50px;
+    text-align: right;
+}
+
+.fleche-panel:hover {
+    background: rgba(0, 0, 0, 0.75);
+    color: #afafaf;
+}
+/* on creer le control du panel*/
+#fleche-1:checked ~ .panel-1,
+#fleche-2:checked ~ .panel-2{
+    display: block;
+    color: white;
+}
+
+/* titre section Accueil et bouton */
+
+#title {
+    position: absolute;
+	left: 0;
+	top: 42%;
+    width: 40%;
+	transform: translate(30%,-45%);
+    text-align: left;
+    color: white;
+    z-index: 10;
+    padding: 0;
+}
+
+.sous-title {
+    font-size: 1.10rem;
+}
+
+.bouton {
+	padding: 12px 25px;
+	background-color: rgb(94, 171, 206);
+	color: white;
+	text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 5px 0 rgb(77, 155, 190);
+}
+
+.barre { /*petite barre bleu en bas a gauche*/
+    position: absolute;
+    height: 5px;
+    width: 8%;
+    bottom: 0px;
+    background-color: rgb(94, 171, 206);
+}
+
+
+/********** SERVICES SECTION *************************************
+******************************************************************/
+
+#services {
+    display: flex;
+    flex-direction: column;
+    padding-top: 82px;
+}
+
+#service-contener {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+/* On met le tiret en place */
+.tiret {
+    position: relative;
+    margin: auto;
+    width: 170px; /*donne la longueur des tirets*/
+    height: 1px; /*donne l'épaisseur des tirets*/
+    background-color: rgba(230, 230, 230, 0.95);
+    z-index: 4;
+}
+
+/* On met le point bleu en place*/
+#service-contener .fa-circle {
+    position: absolute;
+    top: -16px; /* on centre le point par rapport au tiret */
+    right: 40%;
+    font-size: 1.2em; 
+    color: rgb(78, 177, 213);
+    border: 7px solid white; /* on creer une bordure au rond */
+    border-radius: 100%;
+    margin-left: 12px;
+    z-index: 30;
+}
+
+
+
+/*****CONTACTS SECTION*******************************************
+****************************************************************/
+
+footer {
+    display: flex;
+    width: 100%;
+}
+
+iframe {
+    width: 60%;
+    border-radius: 10px;
+}
+
+
+/* placement du formulaire vis a vis de la carte */
+#contact form {
+    height: 600px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* partie contact info mise en forme */
+#contact form h3 { 
+    position: relative;
+    padding: 15px 15px;
+    margin: 10%;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+#contact form span { 
+    color: black;
+}
+
+/* les petit points sous le "tel :" */
+#point {
+    border-bottom: 1px dotted black;
+}
+
+/* partie du formulaire mise en forme et placement */
+.input {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    width: 260px;
+    height: 30px;
+    border: 0.5px rgb(182, 182, 182) solid;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 4px;
+}
+
+textarea {
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    width: 258px;
+    height: 160px;
+    border: 0.5px rgb(187, 187, 187) solid;
+    border-radius: 3px;
+    font-family: "Roboto", sans-serif;
+    border-radius: 4px;
+}
+
+.bouton2 {
+    padding: 10px 20px;
+    height: 35px;
+	background-color: rgb(94, 171, 206);
+	color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-bottom: 2.4px solid #4494BB;
+    border-radius: 4px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0 2px 0 rgb(77, 155, 190);
+}
+
+
+/******************** Media queries***********************************
+---------------------------------------------------------------*/
+
+
+@media screen and (max-width: 1600px){
+
+    /********** GENERAL*************************************
+    ******************************************************************/
+    
+    h1 {
+        font-weight: bold;
+        font-size: 2em;
+        padding: 0;
+        margin: 0;
+    }
+            
+    h2 {
+        font-size: 2.5em;
+    }
+            
+    .bouton {
+        padding: 5px 10px;
+    }   
+    
+    /************ HEADER *************************************
+    **********************************************************/
+    #logo {
+        justify-content: space-between;
+        margin: auto;
+    }
+    
+    
+    #nav ul {    
+        justify-content: space-between;
+        margin: auto;
+    }
+    
+    /********** SERVICES SECTION *************************************
+    ******************************************************************/
+
+    #text-service {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        flex-direction: row;
+        margin-top: 45px;
+        width: 100%;
+    }
+    
+    #img-contener {
+        margin-left: 10%;
+    }
+    
+    figure #imageordi {
+    width: 450px;
+    margin: 0;
+    }
+    
+    #list-contener {
+        margin: 0 10px 0 0;
+        flex-basis: 50%;
+    }
+    
+    #text-service ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 0 110px;
+    }
+    
+    #list-contener h3 {
+        line-height: 5px;
+        text-align: justify;
+        margin-top: 25px;
+        padding: 0;
+    }
+    
+    #list-contener p {
+        line-height: 30px;
+        text-align: left;
+    }
+    }
+    
+    @media screen and (max-width: 1280px){
+    
+        /********** GENERAL*************************************
+        ******************************************************************/
+        
+    h1 {
+        font-weight: bold;
+        font-size: 1.5em;
+        padding: 0;
+        margin: 0;
+    }
+                
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    h3 {
+        font-size: 1.2em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+                
+    
+    /************* ACCUEIL SECTION ************************************
+    ******************************************************************/
+    
+    /*on diminue la taille des demi-rond*/
+    .fleche-panel {
+        height: 40px;
+    }
+     /*on replace les icones angles dans les demi-rond*/
+    .fa-angle-left {
+            padding-top: 5px;
+            padding-left: 4px;
+        }
+        
+    .fa-angle-right {
+            padding-top: 5px;
+            padding-right: 4px;
+    }
+    
+        /********** SERVICES SECTION *************************************
+        ******************************************************************/
+        
+    #img-contener {
+        margin: auto;
+    }
+        
+    figure #imageordi {
+        width: 400px;
+        margin: 0;
+    }
+        
+    #list-contener {
+        margin: auto;
+    }
+        
+    #list-contener p {
+        line-height: 25px;
+        text-align: justify;
+    }
+    }
+    
+    
+@media only screen and (max-width: 960px){
+    
+        /********** GENERAL*************************************
+    ******************************************************************/
+    
+    #title .title-texte {
+        font-size: 0.6em;
+    }
+    
+    .sous-title {
+        font-size: 0.7em;
+    }
+            
+    h2 {
+        font-size: 1em;
+    }
+    
+    h3 {
+        font-size: 1em;
+    
+    }
+    
+    p {
+        font-size: 1em;
+    }
+            
+    .bouton {
+        padding: 5px 10px;
+    }  
+    
+        /************* HEADER ************************************
+    ******************************************************************/
+    
+    .header-contener {
+        display: flex;
+        justify-content: flex-end;
+        height: 190px;
+    }
+        
+    #logo {
+        margin: auto;
+    }
+        
+    #nav {
+        display: flex;
+        padding: 0 10px;
+        margin: 0;
+        justify-content: flex-start;
+        background-color: #1B3C59;
+        list-style: none;
+        
+    }
+        
+    #nav ul {    
+        flex-direction: column;
+        padding: 10px;
+    }
+        
+        
+    #nav ul li a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        padding: 10px 10px;
+        color: white;
+    }
+        
+        
+    #nav ul li a:hover {
+        background-color: rgb(91, 175, 214);
+        padding: 10px 10px;
+        border: none;
+    }
+    
+    /************* ACCUEIL SECTION ************************************
+    ******************************************************************/
+    
+    /* Placement de la section */
+    #accueil {
+        margin-top: 193px;
+    }
+
+    .slide img {
+        height: 250px;
+    }
+    
+    #title {
+        text-align: center;
+     }
+ 
+    .bouton {
+        margin: 0 0 5px 0;
+    }
+    
+        /********** SERVICES SECTION *************************************
+        ******************************************************************/
+        
+    #text-service {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        margin-top: 45px;
+        width: 100%;
+    }
+    
+    
+    #img-contener {
+        margin: auto;
+    }
+            
+    figure #imageordi {
+        width: 400px;
+        margin: 0;
+    }
+            
+    #list-contener {
+        margin: auto;
+        width: 90%;
+    }
+            
+    #list-contener p {
+        line-height: 25px;
+        text-align: justify;
+    }
+    
+    }
+    
+@media screen and (max-width: 500px){
+    
+            /********** SERVICES SECTION et GENERAL*************************************
+    ******************************************************************/
+    
+    body, html{
+        padding: 0;
+        margin: 0;
+    }
+    
+    h1 {
+        font-weight: bold;
+        font-size: 0.7em;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .bleu-text {
+        font-size: 1em;
+        color: rgb(94, 171, 206)
+    }
+                
+    h2 {
+        font-size: 1em;
+    }
+    
+    h3 {
+        font-size: 1em;
+    }
+                
+    .bouton {
+        padding: 3px 5px;
+    }  
+        
+    
+    
+    
+            /************* HEADER ************************************
+    ******************************************************************/
+    
+    .header-contener {
+        display: block;
+        height: 130px;
+    }
+    
+    #logo {
+        display: flex;
+        justify-content: center;
+    }
+        
+    #logo img {
+        width: 170px;
+    }
+    
+    #nav {
+        display: flex;
+        flex-direction: column;
+        background-color: #1B3C59;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    
+    #nav ul {    
+        width: 100%;
+    }
+    
+    #nav ul li {
+        margin: 0;
+    }
+    
+    #nav ul li a {
+        text-align: center;
+        transition-duration: 0.1s;
+        display: block;
+        padding: 10px 0px;
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+    }
+    #nav ul li a:hover {
+        background-color: #275177;
+        padding: 10px 0px;
+    }
+    
+    
+        
+    
+    /************* ACCUEIL SECTION ************************************
+    ******************************************************************/
+    
+    #accueil {
+        margin: 212px 0 0 0;
+    }
+    
+    #title {
+       text-align: center;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 150px;
+    }
+
+    
+    /*on transforme les demi-rond en barre*/
+    .fleche-panel {
+        height: 200px;
+        width: 40px;
+    }
+    .fa-angle-left {
+        padding-top: 75px;
+        padding-left: 14px;
+        }
+        
+    .fa-angle-right {
+        padding-top: 75px;
+        padding-right: 14px;
+    }
+    
+    .barre { /*petite barre bleu en bas a gauche*/
+        display: none;
+    }
+    
+    /********** SERVICES SECTION *************************************
+    ******************************************************************/
+    #service-contener {
+        margin: 30px 0 0 0;
+    }
+    
+    #list-contener {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0 0 0 -100px;
+        padding: 0;
+        width: 100%;
+    }
+    
+    figure #imageordi {
+        flex-basis: 100%;
+        margin: 0;
+        width: 240px;
+    }
+    
+    .cercle_icones {
+        display: none;
+    }
+    
+    /************** PORTFOLIO SECTION *********************************
+    ********************************************************************/
+    
+    /*Menu*/
+    
+    #menu_portfolio {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+    
+    #menu_portfolio .menu-all {
+        border-radius: 6px;
+    }
+    
+    #menu_portfolio .menu-crea {
+        border-radius: 6px;
+    }
+    
+    #menu_portfolio .menu-corpo {
+        border-radius: 6px;
+    }
+    
+    #menu_portfolio .menu-port {
+       border-radius: 6px; 
+    }
+    
+    input[id="all"]:checked ~ #menu_portfolio .menu-all::after,
+    input[id="creat"]:checked ~ #menu_portfolio .menu-crea::after,
+    input[id="corpo"]:checked ~ #menu_portfolio .menu-corpo::after,
+    input[id="portf"]:checked ~ #menu_portfolio .menu-port::after {
+        display: none;
+    }
+    
+    /*images*/
+    
+    figure {
+        margin: 0;
+    }
+    
+    #menu-portfolio .contener-portfolio figure img {
+        width: 350px;
+        height: 250px;
+        margin: 5px 5px;
+    }
+    
+    figcaption {
+        position: relative; /* position par raport a la figure */
+        height: 40px;
+        width: 354px;
+        bottom: 40%; /* on place sur l'image */
+        opacity: 0; /* on cache le figcaption */
+    }
+    
+    /*****CONTACTS SECTION*******************************************
+    ****************************************************************/
+    
+    iframe {
+        display: none;
+    }
+    
+    #carte-voile {
+        display: none;
+    }
+    
+    #contact form {
+     width: 50%;
+     padding: 0;
+     background-color: white;
+    }
+    
+    textarea, .input {
+        width: 300px;
+    }
+    
+    .bouton2 {
+        margin-bottom: 30px;
+    }
+    }
