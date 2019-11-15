@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<!--Les META-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="Location de vélos à Clermont-ferrand. Bienvenue à Véli-Vélo. Besoin d'un vélo pour vos déplacements ? Véli-Vélo est votre solution!">
+    <meta name="author" content="Frédéric Garcia">
+    <!--<link rel="canonical" href="https://">-->
+	<!-- titre du site -->
+	<title>Véli-Vélo - Clermont-Ferrand</title>
+	
+	<!-- basic favicon -->
+	<link rel="shortcut icon" href="image/ico/favicon.png">
+	
+	<!-- Feuille de styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Polices -->
+    <link rel="stylesheet" href="/awesome_min/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1fdd1eac13.js"></script>
+</head>	
+
+<body>
+	<!-- HEADER -->
+    <header>
+		<div class="header-contener">
+		<!-- Logo -->
+			<div id="logo">
+                <a href="#accueil">
+                <img  src="image/logo.jpg" alt="logo de Véli-Vélo" /></a>
+                <h1>Véli-Vélo</h1>
+			</div>
+		<!-- Menu -->
+	       	<nav id="nav">
+				<ul> 
+					<li><a href="#accueil">Accueil</a></li>
+					<li><a href="#carte">Carte</a></li>
+				</ul>			
+			</nav>
+		</div>
+    </header>	
+    
+    <!-- ACCUEIL SECTION -->
+    <section id="accueil">
+        <div class="slide-contener">
+            <div class="slide">
+                    <img src="image/slider/1.jpg" alt="WebAgency - petite fille avec les mains pleines de peinture" />
+                </div>
+                    <img src="image/slider/2.jpg" alt="WebAgency - petit garçon tenant un haut-parleur" />
+                </div>
+                <div id="bouton">
+                    <em id="prev" class="fas fa-arrow-circle-left"></em>
+                    <em id="next" class="fas fa-arrow-circle-right"></em>
+                    <em id="play" class="fas fa-play-circle"></em>
+                    <em id="pause" class="fas fa-pause-circle"></em>
+                </div>
+
+            </div>    
+                <!-- Barre Accueil -->
+            <div class="barre"></div>
+        </div>
+    </section>
+
+    <!--  SERVICES SECTION -->
+        <!--Titre-->
+    <section id="services">
+        <div id="service-contener">
+                <h2>Véli-Vélo</h2>
+            <div class="tiret">
+                <span class="fa fa-circle" aria-hidden="true"></span>
+            </div>
+                    <br>
+                <p>Nous proposons un service de location de vélo gratuitement.</p>
+        </div>
+            
+    </section>
+        
+    <!-- CONTACTS  -->
+    <footer id="carte">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.221609686053!2d2.347631551603431!3d48.87305177918725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e145ccb3091%3A0x9495beee8c96ec27!2s25+Rue+d&#39;Hauteville%2C+75010+Paris!5e0!3m2!1sfr!2sfr!4v1559509009360!5m2!1sfr!2sfr" height="600" width="250" style="border:0" allowfullscreen></iframe>
+            
+        <!-- Formulaire --> 
+        <form method="post" action="#">
+            <div>
+                <h3>Réservation</h3> 
+                <span>Merci<br>de remplir votre réservation</span> 
+                    <br>
+                    <input type="text" placeholder="Nom" name="nom" id="nom" class="input" required/> 
+                    <label for="nom"></label>
+                    <br>
+                    <input type="text" placeholder="Prénom" name="prenom" id="prenom" class="input" required/>
+                    <label for="prenom"></label>
+                    <br>
+                    <textarea placeholder="Signature" id="message"></textarea>
+                    <label for="message"></label>
+                    <br>
+                    <input type="submit" value="Send Message" class="bouton2" />
+            </div>
+        </form>
+    </footer>
+</body>
+</html>
