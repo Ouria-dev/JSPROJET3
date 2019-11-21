@@ -26,20 +26,24 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     padding-bottom: 50px;
+    background-color: rgb(170, 185, 183);
 }
 
 h1 {
     font-weight: bold;
     font-size: 2.7em;
-    padding: 0;
+    padding-left: 35px;
+    font-family: 'Roboto-Bold', sans-serif;
     margin: 0;
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 1.2em;
     text-transform: uppercase;
     font-family: 'Roboto-Bold', sans-serif;
     text-align: center;
+    padding-top: 10px;
+    padding-left: 35px;
 }
 
 h3 {
@@ -52,17 +56,10 @@ p {
     font-family: 'Roboto', sans-serif;
 
 }
-    
-.bleu-text {
-    color: rgb(94, 171, 206);
+
+.titleV {
+    color: white;
 }
-
-#title-query {
-    display: none;
-}
-
-
-
 
 /************ HEADER *************************************
 **********************************************************/
@@ -78,8 +75,8 @@ header {
     justify-content: space-between;
     position: fixed; /*Pour que le header suive la navigation*/
     width: 100%;
-    height: 105px;
-    background-color: white;
+    height: 117px;
+    background-color: #25aaf9;
     top: 0;
 	right: 0;
     left: 0;
@@ -87,8 +84,7 @@ header {
     margin-left: auto;
 	align-items: center;
     z-index: 1000;
-    flex-wrap: wrap;
-   /* flex-wrap: wrap; retour a la ligne*/
+    flex-wrap: wrap; /* flex-wrap: wrap; retour a la ligne*/
 }
 
 /* Partie logo du header */
@@ -118,19 +114,19 @@ header {
 
 #nav ul li a {
     text-decoration: none;/*supprime la décoration des liens*/
-    color: rgb(91, 97, 104);
+    color: rgb(255, 255, 255);
     font-size: 1.2em;
     font-family: 'Roboto';
 }
 
 #nav ul li a:hover {
-    padding-top: 38px; /*place le tirai en haut*/
+    padding-top: 10px; /*place le tirai en haut*/
     color: black;
     border-top: 3px solid rgb(94, 178, 218); /*creer le tirai bleu*/
 }
 
 
-/************* ACCUEIL SECTION ************************************
+/************* SECTION SLIDER ************************************
 ******************************************************************/
 
 /* Placement de la section */
@@ -138,7 +134,7 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 100px;
+	margin-top: 200px;
 }
 
 .slide-contener { /* fixe le slide */
@@ -147,109 +143,98 @@ header {
     width: 100%;
 }
 
-/* Placement des images pour le slide*/
-.liens {
-	display: none;/*On rend invisible le radio*/
-}
-
-.liens:checked + .slide-box {
-    position: static;
-    opacity: 1;
-}
-/* on creer la tansition */
-.slide-box {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.4s linear;
-}
-/* dimension des images */
-.slide-box img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-/* placement des fleches et du translate */
-.fleche-panel {
-    display: none;
-    position: absolute;
-    top: 50%;
-    width: 2%;
-	height: 80px;
-    z-index: 100;
-    transform: translate(0, -50%);
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.28);
-    color: white;
-    font-size: 33px;
-}
-
-.fa-angle-left {
-	padding-top: 24px;
-	padding-left: 10px;
-}
-
-.fa-angle-right {
-	padding-top: 24px;
-	padding-right: 10px;
-}
-/*demi rond*/
-.fleche-panel.prev { 
-    left: -1px;
-    border-radius: 0 50px 50px 0;
-    text-align: left;
-}
-
-.fleche-panel.next {
-    right: 2px;
-    border-radius: 50px 0 0 50px;
-    text-align: right;
-}
-
-.fleche-panel:hover {
-    background: rgba(0, 0, 0, 0.75);
-    color: #afafaf;
-}
-/* on creer le control du panel*/
-#fleche-1:checked ~ .panel-1,
-#fleche-2:checked ~ .panel-2{
-    display: block;
-    color: white;
-}
-
-/* titre section Accueil et bouton */
-
-#title {
-    position: absolute;
-	left: 0;
-	top: 42%;
-    width: 40%;
-	transform: translate(30%,-45%);
-    text-align: left;
-    color: white;
-    z-index: 10;
+.section-slider {
+    position: relative;
+    margin: 0;
     padding: 0;
-}
+    width: 90%;
+    min-height: 600px;
+    overflow-x: hidden;
+  }
+  
+  .slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .image1 {
+    background-image: url("../image/slider/1.jpg");
+  }
+  
+  .image2 {
+    background-image: url("../image/slider/2.jpg");
+    display: none;
+  }
+  
+  .image3 {
+    background-image: url("../image/slider/3.jpg");
+    display: none;
+  }
+  
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 450px;
+    min-height: 600px;
+    overflow-x: hidden;
+  }
 
-.sous-title {
-    font-size: 1.10rem;
-}
-
-.bouton {
-	padding: 12px 25px;
-	background-color: rgb(94, 171, 206);
-	color: white;
-	text-decoration: none;
-    border-radius: 3px;
-    box-shadow: 0 5px 0 rgb(77, 155, 190);
-}
-
-.barre { /*petite barre bleu en bas a gauche*/
+  #slider p {
+    margin-top: 10px;
+    line-height: 24px;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  #prev {
     position: absolute;
-    height: 5px;
-    width: 8%;
-    bottom: 0px;
-    background-color: rgb(94, 171, 206);
-}
+    cursor: pointer;
+    top: 48%;
+    width: 0;
+    height: 0;
+    left: 0;
+    margin-left: 35px;
+    color: #25aaf9;
+    font-size: 30px;
+  }
+  
+  #next {
+    position: absolute;
+    cursor: pointer;
+    top: 48%;
+    width: 0;
+    height: 0;
+    right: 0;
+    margin-right: 65px;
+    color: #25aaf9;
+    font-size: 30px;
+  }
+  
+  #pause{
+    position: absolute;
+    cursor: pointer;
+    bottom: 120px;
+    left: 49%;
+    color: #25aaf9;
+    font-size: 40px;
+  }
+  
+  #play{
+    position: absolute;
+    cursor: pointer;
+    bottom: 170px;
+    left: 49%;
+    color: #25aaf9;
+    font-size: 40px;
+    display: none; /* On désactive le play par défaut pour afficher le bouton pause en premier*/
+  }
+
+
 
 
 /********** SERVICES SECTION *************************************
@@ -258,7 +243,8 @@ header {
 #services {
     display: flex;
     flex-direction: column;
-    padding-top: 82px;
+    padding-top: 90px;
+    padding-bottom: 90px;
 }
 
 #service-contener {

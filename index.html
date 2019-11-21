@@ -30,7 +30,8 @@
 			<div id="logo">
                 <a href="#accueil">
                 <img  src="image/logo.jpg" alt="logo de Véli-Vélo" /></a>
-                <h1>Véli-Vélo</h1>
+                <h1>V<em class="titleV">é</em>l<em>i</em>-V<em class="titleV">é</em>l<em>o</em></h1>
+                <h2>Le Vélo qu'il vous faut</h2>
 			</div>
 		<!-- Menu -->
 	       	<nav id="nav">
@@ -42,32 +43,34 @@
 		</div>
     </header>	
     
-    <!-- ACCUEIL SECTION -->
+    <!-- SECTION SLIDER -->
     <section id="accueil">
-        <div class="slide-contener">
-            <div class="slide">
-                    <img src="image/slider/1.jpg" alt="WebAgency - petite fille avec les mains pleines de peinture" />
+        <div class="section-slider">
+            <div class="slide image1">
+                <div class="slide-content">
                 </div>
-                    <img src="image/slider/2.jpg" alt="WebAgency - petit garçon tenant un haut-parleur" />
+            </div>
+            <div class="slide image2">
+                <div class="slide-content">
                 </div>
-                <div id="bouton">
-                    <em id="prev" class="fas fa-arrow-circle-left"></em>
-                    <em id="next" class="fas fa-arrow-circle-right"></em>
-                    <em id="play" class="fas fa-play-circle"></em>
-                    <em id="pause" class="fas fa-pause-circle"></em>
+            </div>
+            <div class="slide image3">
+                <div class="slide-content">
                 </div>
-
-            </div>    
-                <!-- Barre Accueil -->
-            <div class="barre"></div>
+            </div>
         </div>
+            <div id="prev"><em class="fas fa-arrow-circle-left"></em></div>
+            <div id="next"><em class="fas fa-arrow-circle-right"></em></div>
+            <div id="pause"><em class="fas fa-pause-circle"></em></div>
+            <div id="play"><em class="fas fa-play-circle"></em></div>
+        
     </section>
 
     <!--  SERVICES SECTION -->
         <!--Titre-->
     <section id="services">
         <div id="service-contener">
-                <h2>Véli-Vélo</h2>
+                <h3>Véli-Vélo</h3>
             <div class="tiret">
                 <span class="fa fa-circle" aria-hidden="true"></span>
             </div>
@@ -100,5 +103,11 @@
             </div>
         </form>
     </footer>
+
+            <!-- Javascript -->
+
+        <!-- Slider -->
+        <script src="js/slider.js"></script>
+        
 </body>
 </html>
