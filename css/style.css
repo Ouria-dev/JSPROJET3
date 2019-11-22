@@ -150,6 +150,7 @@ header {
     width: 90%;
     min-height: 600px;
     overflow-x: hidden;
+    border: 2px solid #25aaf9;
   }
   
   .slide {
