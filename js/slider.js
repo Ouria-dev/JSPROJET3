@@ -40,7 +40,7 @@ let slider = {
     },
 
     playSlide: function () {
-        timer = window.setInterval(slider.suivant.bind(slider), 5000); //Lance le timer
+        timer = window.setInterval(slider.suivant.bind(slider), 5000); //On relance le slider
         this.play.style.display = "none";   //On fait disparaitre le bouton play
         this.pause.style.display = "block";  //On fait apparaitre le bouton pause
     },
@@ -50,8 +50,8 @@ let slider = {
 /* Création de la variable timer, setInterval déclenche le slider à intervalle régulier de 5s.*/
 let timer = window.setInterval(slider.suivant.bind(slider), 5000);//La fonction bind crée une nouvelle fonction liée a l'objet "slider" https://devdocs.io/javascript/global_objects/function/bind
 
-slider.next.addEventListener("click", slider.suivant.bind(slider));     //Le bouton droit appel la méthode "suivant" de l'objet "slider"
-slider.prev.addEventListener("click", slider.precedent.bind(slider));   //Le bouton gauche appel la méthode "précédent" de l'objet "slider"
-slider.play.addEventListener("click", slider.playSlide.bind(slider));   //Le bouton play appel la méthode "playSlide" de l'objet "slider et relance le timer"
-slider.pause.addEventListener("click", slider.pauseSlide.bind(slider)); //Le bouton pause appel la méthode "pauseSlide" de l'objet "slider"
-document.addEventListener("keydown", slider.clavier.bind(slider));      //Gestion touche du clavier via la méthode "clavier du slider" de l'objet document
+let boutonDroit = slider.next.addEventListener("click", slider.suivant.bind(slider));     //Le bouton droit appel la méthode "suivant" de l'objet "slider"
+let boutonGauche = slider.prev.addEventListener("click", slider.precedent.bind(slider));   //Le bouton gauche appel la méthode "précédent" de l'objet "slider"
+let boutonPlay = slider.play.addEventListener("click", slider.playSlide.bind(slider));   //Le bouton play appel la méthode "playSlide" de l'objet "slider"
+let boutonPause = slider.pause.addEventListener("click", slider.pauseSlide.bind(slider)); //Le bouton pause appel la méthode "pauseSlide" de l'objet "slider"
+let touches = document.addEventListener("keydown", slider.clavier.bind(slider));      //Gestion touche du clavier via la méthode "clavier du slider" de l'objet document
