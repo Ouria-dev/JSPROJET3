@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<!--Les META-->
+    <!--Les META-->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="description" content="Location de vélos à Lyon. Bienvenue à Véli-Vélo. Besoin d'un vélo pour vos déplacements ? Véli-Vélo est votre solution!">
+	<meta name="description" content="Véli-Vélo Agence de location gratuite de vélos sur la ville de Nantes">
     <meta name="author" content="Frédéric Garcia">
-    <!--<link rel="canonical" href="https://">-->
-	<!-- titre du site -->
-	<title>Véli-Vélo - Lyon</title>
-	
-	<!-- basic favicon -->
-	<link rel="shortcut icon" href="image/ico/favicon.png">
-	
-	<!-- Feuille de styles -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- Polices -->
+    <link rel="canonical" href="">
+    <!-- titre du site -->
+    <title>Location de vélos à Nantes</title>
+   	<!-- FAVICON DU SITE -->
+    <link rel="shortcut icon" href="images/ico/favicon.png">
+    <!-- Feuille de styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <!-- Polices et icones -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-</head>	
+    <script src="https://kit.fontawesome.com/1fdd1eac13.js" crossorigin="anonymous"></script>    
+</head>
 
 <body>
 	<!-- HEADER -->
@@ -35,7 +35,7 @@
 	       	<nav id="nav">
 				<ul> 
 					<li><a href="#accueil">Accueil</a></li>
-					<li><a href="#carte">Carte</a></li>
+					<li><a href="#myMapSection">Carte</a></li>
 				</ul>			
 			</nav>
 		</div>
@@ -73,39 +73,43 @@
                 <span class="fa fa-circle" aria-hidden="true"></span>
             </div>
                     <br>
-                <p>Nous proposons un service de location de vélo gratuitement.</p>
+                <p>Nous proposons un service de location de vélo gratuitement sur toute la ville de Nantes.</p>
         </div>
-            
     </section>
-        
-    <!-- CONTACTS  -->
-    <footer id="carte">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.221609686053!2d2.347631551603431!3d48.87305177918725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e145ccb3091%3A0x9495beee8c96ec27!2s25+Rue+d&#39;Hauteville%2C+75010+Paris!5e0!3m2!1sfr!2sfr!4v1559509009360!5m2!1sfr!2sfr" height="600" width="250" style="border:0" allowfullscreen></iframe>
-            
-        <!-- Formulaire --> 
-        <form method="post" action="#">
-            <div>
-                <h3>Réservation</h3> 
-                <span>Merci<br>de remplir votre réservation</span> 
-                    <br>
-                    <input type="text" placeholder="Nom" name="nom" id="nom" class="input" required/> 
-                    <label for="nom"></label>
-                    <br>
-                    <input type="text" placeholder="Prénom" name="prenom" id="prenom" class="input" required/>
-                    <label for="prenom"></label>
-                    <br>
-                    <textarea placeholder="Signature" id="message"></textarea>
-                    <label for="message"></label>
-                    <br>
-                    <input type="submit" value="Send Message" class="bouton2" />
+    <section>
+        <!-- SECTION MAP -->
+        <div id="myMapSection">
+            <!-- section pour la carte -->
+            <div id="map">
+        </div>
+        <!-- SECTION STATION -->
+            <div id="myStationSection">
             </div>
-        </form>
-    </footer>
+        </div>
+        <!-- SECTION CANVAS -->
+        <div id="myCanvasSection">
+        </div>
+    
+        <!-- SECTION RESERVATION -->
+        <div id="myReservationSection">
+        </div>
+        </section>
+      
+            
+            <footer>
+                <p>Site réalisé dans le cadre de la formation OpenClassrooms Développeur Web</p>
+            </footer>    
 
-            <!-- Javascript -->
+
+<!------------- Javascript ------------------------------------------------------------------------------------------------->
 
         <!-- Slider -->
-        <script src="js/slider.js"></script>
+        <script src="js/Slider.js"></script>
+        <script src="js/Map.js"></script> 
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+        <script>var map = new Map("map", "Nantes", 47.218371, -1.553621);</script>
+
+
         
 </body>
 </html>

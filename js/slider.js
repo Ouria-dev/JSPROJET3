@@ -23,7 +23,7 @@ let slider = {
         this.slide[this.image].style.display = "block";  
     },
 
-/*Méthode pour les touches du clavier*/  
+/*Méthode pour les touches du clavier*/
     clavier: function (i) {                              
         if (i.keyCode === 39) {      // keyCode === 39 Touche de fleche droite source: https://www.dcode.fr/code-touches-javascript
             document.addEventListener("keydown", this.suivant()); // Si touche 39 alors applique la méthode suivante
@@ -39,6 +39,7 @@ let slider = {
         this.play.style.display = "block"; //On fait apparaitre le bouton play
     },
 
+/*Méthode pour bouton play*/
     playSlide: function () {
         timer = window.setInterval(slider.suivant.bind(slider), 5000); //On relance le slider
         this.play.style.display = "none";   //On fait disparaitre le bouton play

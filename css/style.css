@@ -1,11 +1,11 @@
-/*---- GENERAL STYLE -----------------------------------------*/
+/*---- GENERAL STYLE -------------------------
+--------------------------------------------*/
 
 body {
     width: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    padding-bottom: 50px;
     background-color: rgb(170, 185, 183);
 }
 
@@ -27,7 +27,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.3em;
+    text-align: center;
     font-family: 'Roboto-Bold', sans-serif;
 }
 
@@ -37,17 +38,12 @@ p {
 
 }
 
-.titleV {
-    color: white;
-}
-
 /************ HEADER *************************************
 **********************************************************/
-
 header {
     width: 100%;
 	margin-left: auto;
-	margin-right: auto;
+    margin-right: auto;
 }
 
 .header-contener {
@@ -64,7 +60,6 @@ header {
     margin-left: auto;
 	align-items: center;
     z-index: 1000;
-    flex-wrap: wrap; /* flex-wrap: wrap; retour a la ligne*/
 }
 
 /* Partie logo du header */
@@ -101,10 +96,26 @@ header {
 
 #nav ul li a:hover {
     padding-top: 10px; /*place le tirai en haut*/
-    color: black;
-    border-top: 3px solid rgb(94, 178, 218); /*creer le tirai bleu*/
+    color: rgb(40, 12, 201);
+    border-top: 3px solid rgb(40, 12, 201); /*creer le tirai bleu*/
 }
 
+.titleV {
+    color: white;
+}
+
+#sousTitre {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-family: 'Roboto-Bold', sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 35px;
+}
+
+
+/************* FIN SECTION HEADER ************************************
+******************************************************************/
 
 /************* SECTION SLIDER ************************************
 ******************************************************************/
@@ -130,7 +141,7 @@ header {
     width: 90%;
     min-height: 600px;
     overflow-x: hidden;
-    border: 2px solid #25aaf9;
+    border: 3px solid #25aaf9;
   }
   
   .slide {
@@ -140,16 +151,16 @@ header {
   }
   
   .image1 {
-    background-image: url("../image/slider/1.jpg");
+    background-image: url("../images/slider/1.jpg");
   }
   
   .image2 {
-    background-image: url("../image/slider/2.jpg");
+    background-image: url("../images/slider/2.jpg");
     display: none;
   }
   
   .image3 {
-    background-image: url("../image/slider/3.jpg");
+    background-image: url("../images/slider/3.jpg");
     display: none;
   }
   
@@ -159,7 +170,7 @@ header {
     justify-content: center;
     margin-left: 100px;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto-Bold', sans-serif;
     width: 450px;
     min-height: 600px;
     overflow-x: hidden;
@@ -198,9 +209,9 @@ header {
   
   #pause{
     position: absolute;
+    justify-content: center;
     cursor: pointer;
-    bottom: 120px;
-    left: 49%;
+    bottom: 170px;
     color: #25aaf9;
     font-size: 40px;
   }
@@ -209,23 +220,23 @@ header {
     position: absolute;
     cursor: pointer;
     bottom: 170px;
-    left: 49%;
     color: #25aaf9;
     font-size: 40px;
     display: none; /* On désactive le play par défaut pour afficher le bouton pause en premier*/
   }
 
+/************* FIN SECTION SLIDER ************************************
+******************************************************************/
 
 
 
-/********** SERVICES SECTION *************************************
+/********** INFOS SECTION *************************************
 ******************************************************************/
 
 #services {
     display: flex;
     flex-direction: column;
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding-top: 82px;
 }
 
 #service-contener {
@@ -249,98 +260,32 @@ header {
     top: -16px; /* on centre le point par rapport au tiret */
     right: 40%;
     font-size: 1.2em; 
-    color: rgb(78, 177, 213);
+    color: #25aaf9;
     border: 7px solid white; /* on creer une bordure au rond */
     border-radius: 100%;
     margin-left: 12px;
     z-index: 30;
 }
+/********** FIN INFOS SECTION *************************************
+******************************************************************/
 
 
-
-/*****CONTACTS SECTION*******************************************
+/*****SECTION MAP*******************************************
 ****************************************************************/
 
-footer {
+#myMapSection {
     display: flex;
-    width: 100%;
-}
-
-iframe {
-    width: 60%;
-    border-radius: 10px;
-}
-
-
-/* placement du formulaire vis a vis de la carte */
-#contact form {
-    height: 600px;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-/* partie contact info mise en forme */
-#contact form h3 { 
-    position: relative;
-    padding: 15px 15px;
-    margin: 10%;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    font-size: 1.6em;
+    margin-top: 50px;
 }
 
-#contact form span { 
-    color: black;
+#map {
+    justify-content: center;
+    height: 600px;/*la carte de LeafletJS doit avoir une hauteur et largeur définie*/
+    width: 1600px;
+    border: 3px solid #25aaf9;
 }
 
-/* les petit points sous le "tel :" */
-#point {
-    border-bottom: 1px dotted black;
-}
-
-/* partie du formulaire mise en forme et placement */
-.input {
-    padding-left: 10px;
-    margin-bottom: 10px;
-    width: 260px;
-    height: 30px;
-    border: 0.5px rgb(182, 182, 182) solid;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 4px;
-}
-
-textarea {
-    padding-left: 10px;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    width: 258px;
-    height: 160px;
-    border: 0.5px rgb(187, 187, 187) solid;
-    border-radius: 3px;
-    font-family: "Roboto", sans-serif;
-    border-radius: 4px;
-}
-
-.bouton2 {
-    padding: 10px 20px;
-    height: 35px;
-	background-color: rgb(94, 171, 206);
-	color: white;
-    text-decoration: none;
-    font-size: 0.9em;
-    font-weight: bold;
-    border-bottom: 2.4px solid #4494BB;
-    border-radius: 4px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    box-shadow: 0 2px 0 rgb(77, 155, 190);
-}
-
-
-/******************** Media queries***********************************
----------------------------------------------------------------*/
+/*****FIN SECTION MAP*******************************************
+****************************************************************/
