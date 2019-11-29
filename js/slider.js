@@ -8,7 +8,12 @@ let slider = {
     play: document.querySelector("#play"),          // Bouton play
     slide: document.getElementsByClassName("slide"),// Sélection des images via la classe slide
     image: 0,                                       //  numerotation des images via la variable image par default vaut 0
-    
+
+/*Méthode pour la durée de l'inter-slide*/    
+    lancement: function () {//setInterval vas permettre de gérer le temps entre chaque images. Ici à 5 secondes
+        timer = window.setInterval(slider.suivant.bind(slider), 5000);//La fonction bind crée une nouvelle fonction liée a l'objet "slider" https://devdocs.io/javascript/global_objects/function/bind
+    },
+
 /*Méthode pour avancer le slider*/
     suivant: function () {   
         this.slide[this.image].style.display = "none";  // On fait disparaître l'image 
@@ -32,27 +37,27 @@ let slider = {
         }
     },
 
-/*Méthode pour bouton pause et play*/
+/*Méthode pour bouton play*/
+    playSlide: function () {
+        slider.lancement();// On relance le slider
+        this.play.style.display = "none";   //On fait disparaitre le bouton play
+        this.pause.style.display = "block";  //On fait apparaitre le bouton pause
+    },
+
+/*Méthode pour bouton pause*/
     pauseSlide: function () {
         window.clearInterval(timer);       //Met à zero le setIntervel de timer
         this.pause.style.display = "none"; //On fait disparaitre le bouton pause
         this.play.style.display = "block"; //On fait apparaitre le bouton play
     },
 
-/*Méthode pour bouton play*/
-    playSlide: function () {
-        timer = window.setInterval(slider.suivant.bind(slider), 5000); //On relance le slider
-        this.play.style.display = "none";   //On fait disparaitre le bouton play
-        this.pause.style.display = "block";  //On fait apparaitre le bouton pause
+/*Méthode pour le controle : "un seul pour les gouverner tous ;)"*/
+    controle: function () { 
+        slider.lancement(); 
+        slider.next.addEventListener("click", slider.suivant.bind(slider));     //Le bouton droit appel la méthode "suivant" de l'objet "slider"
+        slider.prev.addEventListener("click", slider.precedent.bind(slider));   //Le bouton gauche appel la méthode "précédent" de l'objet "slider"
+        slider.play.addEventListener("click", slider.playSlide.bind(slider));   //Le bouton play appel la méthode "playSlide" de l'objet "slider"
+        slider.pause.addEventListener("click", slider.pauseSlide.bind(slider)); //Le bouton pause appel la méthode "pauseSlide" de l'objet "slider"
+        document.addEventListener("keydown", slider.clavier.bind(slider));      //Gestion touche du clavier via la méthode "clavier du slider" de l'objet document
     },
 }
-
-/* Création du script */
-/* Création de la variable timer, setInterval déclenche le slider à intervalle régulier de 5s.*/
-let timer = window.setInterval(slider.suivant.bind(slider), 5000);//La fonction bind crée une nouvelle fonction liée a l'objet "slider" https://devdocs.io/javascript/global_objects/function/bind
-
-let boutonDroit = slider.next.addEventListener("click", slider.suivant.bind(slider));     //Le bouton droit appel la méthode "suivant" de l'objet "slider"
-let boutonGauche = slider.prev.addEventListener("click", slider.precedent.bind(slider));   //Le bouton gauche appel la méthode "précédent" de l'objet "slider"
-let boutonPlay = slider.play.addEventListener("click", slider.playSlide.bind(slider));   //Le bouton play appel la méthode "playSlide" de l'objet "slider"
-let boutonPause = slider.pause.addEventListener("click", slider.pauseSlide.bind(slider)); //Le bouton pause appel la méthode "pauseSlide" de l'objet "slider"
-let touches = document.addEventListener("keydown", slider.clavier.bind(slider));      //Gestion touche du clavier via la méthode "clavier du slider" de l'objet document

@@ -114,6 +114,7 @@ header {
 }
 
 
+
 /************* FIN SECTION HEADER ************************************
 ******************************************************************/
 
@@ -218,6 +219,7 @@ header {
   
   #play{
     position: absolute;
+    justify-content: center;
     cursor: pointer;
     bottom: 170px;
     color: #25aaf9;
@@ -282,10 +284,78 @@ header {
 
 #map {
     justify-content: center;
-    height: 600px;/*la carte de LeafletJS doit avoir une hauteur et largeur définie*/
-    width: 1600px;
+    height: 30vw;/*la carte de LeafletJS doit avoir une hauteur et largeur définie*/
+    width: 70vw;
     border: 3px solid #25aaf9;
 }
 
 /*****FIN SECTION MAP*******************************************
+****************************************************************/
+/*height: 650px;la carte de LeafletJS doit avoir une hauteur et largeur définie
+    width: 1600px;*/
+
+/*****SECTION STATION*******************************************
+****************************************************************/
+
+#myStationSection {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    }
+
+form#formSection {
+    align-self: center;
+    margin: 0 10px;
+    width: 20vw;
+    height: 30vw;
+    border: solid 3px #25aaf9;
+}
+
+form h2 {
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    color: #000000;
+    background-color: #25aaf9;
+}
+
+form p {
+    text-align: center;
+    color: #0820a5;
+}
+
+#submit {
+    display: block;
+    margin: auto;
+    padding: 5px;
+    background-color: #25aaf9;
+    color: white;
+    border-radius: 3px;
+}
+
+#sts {
+    color: #4fb627;
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: large;
+}
+
+/*****FIN SECTION STATION*******************************************
+****************************************************************/
+
+
+/*****SECTION FOOTER****************************************
+****************************************************************/
+footer {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+footer p {
+    text-align: center;
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 1em;
+}
+
+/*****FIN SECTION FOOTER****************************************
 ****************************************************************/

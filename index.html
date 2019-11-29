@@ -64,7 +64,7 @@
         
     </section>
 
-    <!--  SERVICES SECTION -->
+    <!--  INFOS SECTION -->
         <!--Titre-->
     <section id="services">
         <div id="service-contener">
@@ -104,10 +104,13 @@
         <!-- Slider -->
         <script src="js/Slider.js"></script>
         <script src="js/Map.js"></script> 
+        <script src="js/Station.js"></script>
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-        <script>var map = new Map("map", "Nantes", 47.218371, -1.553621);</script>
-
-
-        
+        <script>
+        document.addEventListener("DOMContentLoaded", function(event) {//quand la page est chargée: démarrer le slide, ajoutez la carte et les informations de réservation
+            var map = new Map("map", "Nantes", 47.218371, -1.553621);//créez votre carte avec cible, city, lat, long
+            slider.controle();
+        });
+        </script>
 </body>
 </html>
