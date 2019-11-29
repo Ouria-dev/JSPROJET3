@@ -219,7 +219,6 @@ header {
   
   #play{
     position: absolute;
-    justify-content: center;
     cursor: pointer;
     bottom: 170px;
     color: #25aaf9;
@@ -331,12 +330,6 @@ form p {
     background-color: #25aaf9;
     color: white;
     border-radius: 3px;
-}
-
-#sts {
-    color: #4fb627;
-    font-family: 'Roboto-Bold', sans-serif;
-    font-size: large;
 }
 
 /*****FIN SECTION STATION*******************************************

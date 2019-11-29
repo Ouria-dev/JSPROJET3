@@ -1,6 +1,6 @@
 /*-----------------MAP------------*/
 
-/*----------Création de la classe Map ------------------*/
+/*----------Création de la classe Map avec ses méthodes------------------*/
 class Map {
     constructor(target, city, lat, long) {
         this.mymap = L.map(target).setView([lat, long], 15);  //carte avec LeafletJS
@@ -10,21 +10,21 @@ class Map {
         return this;
     }
     
-    //ajouter une carte source : https://leafletjs.com/examples/quick-start/
+/*méthode pour ajouter une carte source : https://leafletjs.com/examples/quick-start/ */
     addCarte() {
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
         id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoiZnJlZDMyZyIsImEiOiJjazNnMzZtbngwYWp2M2RxbjRueHloMmMxIn0.IYDCP-mzGXwGiawH7kI0WQ' //ma clé d'accées mapbox
+        accessToken: 'pk.eyJ1IjoiZnJlZDMyZyIsImEiOiJjazNnMzZtbngwYWp2M2RxbjRueHloMmMxIn0.IYDCP-mzGXwGiawH7kI0WQ'
         }).addTo(this.mymap);
     }
     
-    // Récupéré les stations et pour chaque station créer une nouvelle station sur la carte
+/*méthode pour récupérer les stations et pour chaque station créer une nouvelle station sur la carte*/
     addStations() {
-        var map = this.mymap;
+        let map = this.mymap;
         //Requête AJAX pour obtenir les données pour les stations de vélo
-        var req = new XMLHttpRequest();//on crée un nouvel objet de type  XMLHttpRequest  qui correspond à notre objet AJAX. C'est grâce à lui qu'on va créer et envoyer notre requête
+        let req = new XMLHttpRequest();//on crée un nouvel objet de type  XMLHttpRequest  qui correspond à notre objet AJAX. C'est grâce à lui qu'on va créer et envoyer notre requête
         var url = "https://api.jcdecaux.com/vls/v1/stations?contract="+this.city+"&apiKey=e932c78ef50906b64880ec024f50c7015a95b74e";//on demande à ouvrir une connexion vers le service web.
         req.open("GET", url);//Le type de requête est GET car nous voulons récupérer les données.
         req.addEventListener("load", function () {
@@ -42,4 +42,4 @@ class Map {
         });
         req.send(null);
     }
-}
+} 
