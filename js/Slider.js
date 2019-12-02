@@ -8,7 +8,8 @@ let slider = {
     play: document.querySelector("#play"),          // Bouton play
     slide: document.getElementsByClassName("slide"),// Sélection des images via la classe slide
     image: 0,                                       //  numerotation des images via la variable image par default vaut 0
-    
+
+/*Méthode pour lancer le slider avec un timer*/    
     lancement: function (duree) {//setInterval vas permettre de gérer le temps entre chaque images
         timer = window.setInterval(slider.suivant.bind(slider), duree);//La fonction bind crée une nouvelle fonction liée a l'objet "slider" https://devdocs.io/javascript/global_objects/function/bind
     },
@@ -32,7 +33,7 @@ let slider = {
         if (i.keyCode === 39) {      // keyCode === 39 Touche de fleche droite source: https://www.dcode.fr/code-touches-javascript
             document.addEventListener("keydown", this.suivant()); // Si touche 39 alors applique la méthode suivante
         } else if (i.keyCode === 37) {  //keyCode === 37 Touche de fleche gauche
-            document.addEventListener("keydown", this.precedent()); // Si touche 37 alors applique la méthode precedent
+            document.addEventListener("keydown", this.precedent()); // Sinon si touche 37 alors applique la méthode precedent
         }
     },
 
@@ -50,7 +51,7 @@ let slider = {
         this.pause.style.display = "block";              //On fait apparaitre le bouton pause
     },
 
-    /*Méthode pour le controle : "un seul pour les gouverner tous ;)"*/
+/*Méthode pour le controle : "un seul pour les gouverner tous ;)"*/
     controle: function () { //setInterval vas permettre de gérer le temps entre chaque images
         slider.lancement(5000); //La fonction bind crée une nouvelle fonction liée a l'objet "slider" https://devdocs.io/javascript/global_objects/function/bind
         slider.next.addEventListener("click", slider.suivant.bind(slider));     //Le bouton droit appel la méthode "suivant" de l'objet "slider"

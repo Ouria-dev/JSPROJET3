@@ -14,29 +14,31 @@
     <link rel="shortcut icon" href="images/ico/favicon.png">
     <!-- Feuille de styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/Main.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
     <!-- Polices et icones -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/1fdd1eac13.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/1fdd1eac13.js" crossorigin="anonymous"></script> 
 </head>
 
 <body>
-	<!-- HEADER -->
-    <header>
-		<div class="header-contener">
-		<!-- Logo -->
-			<div id="logo">
+    <!-- HEADER -->
+    <header class="d-flex justify-content-between align-items-center py-3 px-5 bg-info text-white">
+		<div class="header-contener" >
+        <!-- Logo -->
+			<div id="sectionlogo">
                 <a href="#accueil">
-                <img  src="images/logo.jpg" alt="logo de Véli-Vélo" /></a>
+                <img src="images/logo.jpg" alt="logo de Véli-Vélo" id="logo"/></a>
                 <h1>V<em class="titleV">é</em>l<em>i</em>-V<em class="titleV">é</em>l<em>o</em></h1>
-                <h2>Le Vélo qu'il vous faut</h2>
+                <p id="sousTitre">Le Vélo qu'il vous faut</p>
 			</div>
 		<!-- Menu -->
 	       	<nav id="nav">
-				<ul> 
-					<li><a href="#accueil">Accueil</a></li>
-					<li><a href="#myMapSection">Carte</a></li>
-				</ul>			
+                <a id="link" href="#"><span id="burger"></span></a>
+                 <ul class="list-unstyled">
+                    <li><a href="#accueil">Utilisation</a></li>
+                    <li><a href="#myMapSection">Carte</a></li>
+                </ul>			
 			</nav>
 		</div>
     </header>	
@@ -68,49 +70,49 @@
         <!--Titre-->
     <section id="services">
         <div id="service-contener">
-                <h3>Véli-Vélo</h3>
+                <h2>V<em class="titleV">é</em>l<em>i</em>-V<em class="titleV">é</em>l<em>o</em></h2>
             <div class="tiret">
                 <span class="fa fa-circle" aria-hidden="true"></span>
             </div>
                     <br>
-                <p>Nous proposons un service de location de vélo gratuitement sur toute la ville de Nantes.</p>
+                <p id="para-expli">Nous proposons un service de location de vélo gratuitement sur toute la ville de Nantes. <em>Cliquez sur une station</em></p>
+                <div>
+                <ul id="point">
+                    <li id="circle1"><span class="list-text">Station avec plus de 5 vélos disponibles</span></li>
+                    <li id="circle2"><span class="list-text">&thinsp;&emsp;Station avec 5 vélos maximum disponibles</span></li>
+                    <li id="circle3"><span class="list-text">&ensp;Station qui n'a plus de vélos actuellement</span></li>
+                </ul>  
+                </div> 
         </div>
     </section>
-    <section>
-        <!-- SECTION MAP -->
+    
+    <section id="sectionCarte">
+    <!-- SECTION MAP -->
         <div id="myMapSection">
-            <!-- section pour la carte -->
-            <div id="map">
-        </div>
-        <!-- SECTION STATION -->
-            <div id="myStationSection">
+        <!-- section pour la carte -->
+                <div id="map"></div>
+    <!-- SECTION STATION -->
+            <div id="responsible">
+                <div id="myStationSection"></div>
+    
+    <!-- SECTION CANVAS -->
+                <div id="myCanvasSection"></div>
             </div>
         </div>
-        <!-- SECTION CANVAS -->
-        <div id="myCanvasSection">
-        </div>
-    
-        <!-- SECTION RESERVATION -->
-        <div id="myReservationSection">
-        </div>
-        </section>
-        <footer>
-                <p>Site réalisé dans le cadre de la formation OpenClassrooms Développeur Web</p>
-        </footer>    
+    <!-- SECTION RESERVATION -->
+    <div id="myReservationSection"></div>
+    </section>
+  
+    <footer>
+        <p>Site réalisé dans le cadre de la formation OpenClassrooms Développeur Web</p>
+    </footer>
 
-
-<!------------- Javascript ------------------------------------------------------------------------------------------------->
-
-        <!-- Slider -->
+    <!--------------------- JAVASCRIPT ----------------------------------------------------------------------------------------------------------------->
         <script src="js/Slider.js"></script>
-        <script src="js/Map.js"></script> 
+        <script src="js/Map.js"></script>    
         <script src="js/Station.js"></script>
+        <script src="js/Canvas.js"></script>
+        <script src="js/Reservation.js"></script>
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-        <script>
-        document.addEventListener("DOMContentLoaded", function(event) {//quand la page est chargée: démarrer le slide, ajoutez la carte et les informations de réservation
-            var map = new Map("map", "Nantes", 47.218371, -1.553621);//créez votre carte avec cible, city, lat, long
-            slider.controle();
-        });
-        </script>
-</body>
+    </body>
 </html>

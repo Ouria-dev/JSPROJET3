@@ -18,12 +18,11 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: 2em;
     text-transform: uppercase;
     font-family: 'Roboto-Bold', sans-serif;
     text-align: center;
-    padding-top: 10px;
-    padding-left: 35px;
+    padding-bottom: 10px;
 }
 
 h3 {
@@ -35,11 +34,11 @@ h3 {
 p {
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
-
 }
 
 /************ HEADER *************************************
 **********************************************************/
+
 header {
     width: 100%;
 	margin-left: auto;
@@ -51,7 +50,7 @@ header {
     justify-content: space-between;
     position: fixed; /*Pour que le header suive la navigation*/
     width: 100%;
-    height: 117px;
+    height: 113px;/*hauteur du menu sans burger*/
     background-color: #25aaf9;
     top: 0;
 	right: 0;
@@ -59,11 +58,11 @@ header {
     margin-right: auto;
     margin-left: auto;
 	align-items: center;
-    z-index: 1000;
+    z-index: 10000;/*pour que le menu passe au dessus de tout meme les "leaflet control" */
 }
 
 /* Partie logo du header */
-#logo {
+#sectionlogo {
     display: flex;
     align-items: center;
     margin-left: 15rem;
@@ -72,19 +71,36 @@ header {
 #nav {
     display: flex;
     align-items: center; /*centre le menu en hauteur*/
-    margin-right: 15rem;/*place le menu plus a gauche */
+    margin-right: 2rem;/*place le menu plus a gauche */
 }
 
-#nav ul {    
+ul.list-unstyled {
     display: flex;
-    justify-content: flex-end;
-    margin: auto;
+    justify-content: center;
+    margin: auto;   
+    position: absolute;
     width: 100%;
+    top: 100%;
+    left: 0;
+    padding: 12px 0;
+    transform: scaleY(0);
+    transform-origin: center top;
+    transition: all 0.3s ease;
     list-style-type: none;/*supprime les puces*/
+    background: rgb(28, 114, 148);
+    transform: scaleY(0);
+    transform-origin: center top;
+    transition: all 0.3s ease;
+}
+
+ul.open {
+    transform: scaleY(1);
 }
 
 #nav ul li {
-    margin-right: 20%;/*creer un espace entre les menus*/
+    padding: 10px 0;
+    text-align: start;
+    margin-right: 35px;/*creer un espace entre les menus*/
 }
 
 #nav ul li a {
@@ -100,6 +116,49 @@ header {
     border-top: 3px solid rgb(40, 12, 201); /*creer le tirai bleu*/
 }
 
+#burger {
+    width:30px;
+    height:2px;
+    background:white;
+    display:inline-block;
+    position:relative;
+}
+
+#burger::before,
+#burger::after {
+    content:'';
+    width:30px;
+    height:2px;
+    background:white;
+    display:inline-block;
+    position:absolute;
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+#burger::before {
+    top:-7px;
+}
+
+#burger::after {
+    top:7px;
+}
+
+#burger.open {
+    background:transparent;
+}
+
+#burger.open::before {
+    transform: rotate(45deg);
+    top:0;
+}
+
+#burger.open::after {
+    transform: rotate(-45deg);
+    top:0;
+}
+
+/* Partie logo du header */
 .titleV {
     color: white;
 }
@@ -114,7 +173,6 @@ header {
 }
 
 
-
 /************* FIN SECTION HEADER ************************************
 ******************************************************************/
 
@@ -126,21 +184,16 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 200px;
+	margin-top: 180px;
 }
 
 .slide-contener { /* fixe le slide */
-    position: relative;
     overflow: hidden;/*comportement en depassement*/
-    width: 100%;
 }
 
 .section-slider {
-    position: relative;
     margin: 0;
     padding: 0;
-    width: 90%;
-    min-height: 600px;
     overflow-x: hidden;
     border: 3px solid #25aaf9;
   }
@@ -169,50 +222,40 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 93vw;
     padding: 0;
     font-family: 'Roboto-Bold', sans-serif;
-    width: 450px;
-    min-height: 600px;
+    min-height: 36vw;
     overflow-x: hidden;
   }
 
-  #slider p {
-    margin-top: 10px;
-    line-height: 24px;
-    font-size: 18px;
-    color: #fff;
-  }
-  
+.cursorLF {
+    display: flex;
+    align-items: center;
+}  
+
   #prev {
     position: absolute;
     cursor: pointer;
-    top: 48%;
-    width: 0;
-    height: 0;
-    left: 0;
-    margin-left: 35px;
+    left: 5px;
+    margin: 0;
     color: #25aaf9;
-    font-size: 30px;
+    font-size: 40px;
   }
   
   #next {
     position: absolute;
     cursor: pointer;
-    top: 48%;
-    width: 0;
-    height: 0;
-    right: 0;
-    margin-right: 65px;
+    right: 5px;
+    margin: 0;
     color: #25aaf9;
-    font-size: 30px;
+    font-size: 40px;
   }
-  
+
   #pause{
     position: absolute;
-    justify-content: center;
     cursor: pointer;
-    bottom: 170px;
+    margin-top: 20%;
     color: #25aaf9;
     font-size: 40px;
   }
@@ -220,7 +263,7 @@ header {
   #play{
     position: absolute;
     cursor: pointer;
-    bottom: 170px;
+    margin-top: 20%;
     color: #25aaf9;
     font-size: 40px;
     display: none; /* On désactive le play par défaut pour afficher le bouton pause en premier*/
@@ -267,6 +310,47 @@ header {
     margin-left: 12px;
     z-index: 30;
 }
+
+#para-expli {
+    font-size: 1.7em;
+}
+
+#para-expli em  {
+    color: white;
+}
+
+
+.list-text {
+    color: black;
+    font-size: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    vertical-align: middle;
+}
+
+#point {
+    display: inline-block;
+    list-style-type: disc;
+    font-size: 3em;
+    margin: 0;
+}
+
+#circle1 {
+    position: relative;
+    color: chartreuse;
+    top: -5px;
+}
+  
+#circle2 {
+    position: relative;
+    color: orange;
+    top: -20px;
+}
+
+#circle3 {
+    position: relative;
+    color: red;
+    top: -35px;
+}
 /********** FIN INFOS SECTION *************************************
 ******************************************************************/
 
@@ -278,44 +362,42 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 #map {
     justify-content: center;
-    height: 30vw;/*la carte de LeafletJS doit avoir une hauteur et largeur définie*/
-    width: 70vw;
-    border: 3px solid #25aaf9;
+    height: 36vw;/*la carte de LeafletJS doit avoir une hauteur et largeur définie*/
+    width: 80vw;
+    border: 4px solid #25aaf9;
 }
 
 /*****FIN SECTION MAP*******************************************
 ****************************************************************/
-/*height: 650px;la carte de LeafletJS doit avoir une hauteur et largeur définie
-    width: 1600px;*/
+
 
 /*****SECTION STATION*******************************************
 ****************************************************************/
 
 #myStationSection {
-    display: flex;
-    flex-direction: row;
-    vertical-align: middle;
-    }
+    margin-left: 20px;
+    height: auto;
+}
 
 form#formSection {
     align-self: center;
-    margin: 0 10px;
-    width: 20vw;
-    height: 30vw;
-    border: solid 3px #25aaf9;
+    text-align: center;
+    border: solid 4px #25aaf9;
+    width: 296px;
 }
 
-form h2 {
+form#formSection h2 {
     text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 30px;
     color: #000000;
-    background-color: #25aaf9;
+    background-color: rgb(37, 170, 249);
+    font-size: 1.2em;
 }
 
 form p {
@@ -326,13 +408,117 @@ form p {
 #submit {
     display: block;
     margin: auto;
-    padding: 5px;
-    background-color: #25aaf9;
+    margin-bottom: 10px;
+    padding: 15px 35px;
+    background-color: #25f937;
     color: white;
     border-radius: 3px;
 }
 
 /*****FIN SECTION STATION*******************************************
+****************************************************************/
+
+/*****SECTION CANVAS*******************************************
+****************************************************************/
+
+#myCanvasSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    margin-right: 0;
+    margin-left: 20px;
+    padding: 0;
+}
+
+form#canvasForm p {
+    text-align: center;
+    background-color: #25aaf9;
+    color: #000000;
+    padding: 5px;
+    margin: 0;
+    width: 294px;
+    height: 30px;
+}
+
+canvas {
+    width: 296px;
+    border: solid 4px #25aaf9;
+    padding: 0;
+
+}
+
+#inputCanvas {
+    display: block;
+}
+
+#myCanvasSection input {
+    margin: 0 0 0 20px;
+    padding: 10px 35px;
+    color: white;
+}
+
+#confirmCanvas {
+    background-color: #25f937;
+}
+
+#resetCanvas {
+    background-color: #f92c25;
+}
+
+
+/*****FIN SECTION CANVAS*******************************************
+****************************************************************/
+
+/*****SECTION RESERVATION****************************************
+****************************************************************/
+#myReservationSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    height: 260px;
+}
+
+div#reservationInfo {
+    background-color: #25aaf9;
+    color: white;
+    width: 100%;
+}
+
+div#reservationInfo h2 {
+    font-size: 1.9em;
+}
+
+button#cancelReservation {
+    margin: auto;
+    display: block;
+    padding: 15px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.reservationCancel {
+    color: #f92c25;
+}
+
+#reservationInfo h1 {
+    padding: 0;
+    text-align: center;
+}
+
+#reservationInfo p {
+    text-align: center;
+}
+
+span#timer {
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+
+/*****FIN SECTION RESERVATION****************************************
 ****************************************************************/
 
 
@@ -350,5 +536,80 @@ footer p {
     font-size: 1em;
 }
 
+
 /*****FIN SECTION FOOTER****************************************
 ****************************************************************/
+
+/******************** MEDIA QUERIES***********************************
+*********************************************************************/
+
+@media only screen and (max-width: 1360px){
+    
+    #myMapSection {
+        display: inline-block;
+        margin-top: 50px;
+    }
+
+    #map {
+        margin-inline-start: 10%;
+    }
+
+    #responsible {
+        display: flex;
+        margin-top: 20px;
+        margin-left: 25%;
+    }
+
+
+    #myCanvasSection {
+        display: flex;
+    }
+
+    #sectionlogo {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+
+    #myMapSection {
+        display: block;
+    }
+
+    #myStationSection {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 10px;
+        margin-right: 0;
+        margin-left: 20px;
+        padding: 0;
+    }
+
+    #responsible {
+        display: block;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 800px){
+
+    h1 {
+        font-size: 1.9em;
+    }
+
+    #sousTitre {
+        display: none;
+    }
+
+    #para-expli {
+        font-size: 1.2em;
+    }
+
+    .list-text {
+        font-size: 0.4em;
+    }
+}
+
+/******************** FIN MEDIA QUERIES***********************************
+*********************************************************************/
