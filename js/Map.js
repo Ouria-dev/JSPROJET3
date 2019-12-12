@@ -10,7 +10,7 @@ class Map {
         return this;
     }
     
-//méthode pour ajouter une carte source : https://leafletjs.com/examples/quick-start/
+//méthode (api mapbox) pour ajouter une carte source : https://leafletjs.com/examples/quick-start/
     ajoutCarte() {
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -20,7 +20,7 @@ class Map {
         }).addTo(this.mymap);
     }
     
-//méthode pour récupérer les stations et pour chaqu'une d'elle créer une nouvelle station sur la carte
+//méthode (api jcdecaux) pour récupérer les stations et pour chaqu'une d'elle créer une nouvelle station sur la carte source : https://developer.jcdecaux.com/#/opendata/vls?page=getstarted
     ajoutStations() {
         var map = this.mymap;
         //Requête AJAX pour obtenir les données pour les stations de vélo

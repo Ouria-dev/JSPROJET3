@@ -42,7 +42,7 @@ class Station {
                 window["oneStation" + nombre].map.setView(e.target.getLatLng(),30);
             });
 
-        } else if (this.station.status === "OPEN" && this.station.available_bikes === 0){//// sinon si station ouverte mais avec 0 vélo  sinon ajouter un marqueur rouge pour les stations sans velo
+        } else if (this.station.status === "OPEN" && this.station.available_bikes === 0){// sinon si station ouverte mais avec 0 vélo  sinon ajouter un marqueur rouge pour les stations sans velo
             var marker = L.marker([this.station.position.lat, this.station.position.lng], {icon: redIcon, clickable: true}).addTo(this.map);
             marker.on('click', function (e){ 
                 window["oneStation" + nombre].afficheStation(false); 
@@ -65,7 +65,7 @@ class Station {
         }
     
         if (available){//si disponible, ajouter un formulaire de réservation
-        formuLaire = "<p><label for='nom'>Nom:   </label><input type='text' name='nom' "+nom+" id='nom' required></p><p><label for='prenom'>Prénom:</label><input type='text' name='prenom' "+prenom+" id='prenom' required></p><input type='submit' id='submit' value='Réserver'>";
+        formuLaire = "<p><label for='nom'>&ensp;&ensp;&thinsp;Nom:   </label><input type='text' name='nom' "+nom+" id='nom' required></p><p><label for='prenom'>Prénom:</label><input type='text' name='prenom' "+prenom+" id='prenom' required></p><input type='submit' id='submit' value='Réserver'>";
         }
 
         //pour toutes les stations on ajoute les informations de la stations

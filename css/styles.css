@@ -212,6 +212,7 @@ ul.open {
     position: absolute;
     cursor: pointer;
     left: 15px;
+    top: 50%;
     margin: 0;
     color: #25aaf9;
     font-size: 40px;
@@ -221,6 +222,7 @@ ul.open {
     position: absolute;
     cursor: pointer;
     right: 15px;
+    top: 50%;
     margin: 0;
     color: #25aaf9;
     font-size: 40px;
@@ -521,6 +523,24 @@ footer p {
 
 @media only screen and (max-width: 1360px){
     
+    #prev {
+        left: 5px;
+        top: 33%;
+      }
+      
+    #next {
+        right: 5px;
+        top: 33%;
+      }
+    
+    #pause{
+        right: 48.7%;
+      }
+      
+    #play{
+        right: 48.7%;
+      }
+
     #myMapSection {
         display: inline-block;
         margin-top: 50px;
@@ -547,6 +567,27 @@ footer p {
 }
 
 @media only screen and (max-width: 1000px){
+
+    #prev {
+        left: 0;
+        top: 29%;
+      }
+      
+    #next {
+        right: 0;
+        top: 29%;
+      }
+    
+    #pause{
+        margin-top: 17.3%;
+        right: 47%;
+      }
+      
+    #play{
+        margin-top: 17.3%;
+        right: 47%;
+      }
+
 
     #myMapSection {
         display: block;
@@ -585,6 +626,27 @@ footer p {
     .list-text {
         font-size: 0.4em;
     }
+
+    #prev {
+        left: 0;
+        top: 24%;
+      }
+      
+    #next {
+        right: 0;
+        top: 24%;
+      }
+    
+    #pause{
+        margin-top: 17.3%;
+        right: 46%;
+      }
+      
+    #play{
+        margin-top: 17.3%;
+        right: 46%;
+      }
+
 }
 
 /******************** FIN MEDIA QUERIES***********************************
