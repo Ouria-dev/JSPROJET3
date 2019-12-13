@@ -1,3 +1,5 @@
+/*---- GENERAL STYLE -------------------------
+--------------------------------------------*/
 
 body {
     width: 100%;
@@ -177,7 +179,6 @@ ul.open {
 /************* SECTION SLIDER ************************************
 ******************************************************************/
 
-/* Placement de la section */
 #accueil {
 	display: flex;
 	align-items: center;
@@ -187,7 +188,6 @@ ul.open {
 
 #mySectionSlider {
     display:flex;
-    flex-direction: center;
     justify-content: center;
     align-items: center;
 }
@@ -201,18 +201,21 @@ ul.open {
 
 #slideImage {
     display: flex;
-    flex-direction: center;
     justify-content: center;
     padding: 0;
     width: 100%;
     max-height: 36vw;
 }
 
+#btnContener {
+    text-align: center;
+}
+
 #prev {
     position: absolute;
     cursor: pointer;
     left: 15px;
-    top: 50%;
+    top: auto;
     margin: 0;
     color: #25aaf9;
     font-size: 40px;
@@ -222,7 +225,7 @@ ul.open {
     position: absolute;
     cursor: pointer;
     right: 15px;
-    top: 50%;
+    top: auto;
     margin: 0;
     color: #25aaf9;
     font-size: 40px;
@@ -296,7 +299,6 @@ ul.open {
 #para-expli em  {
     color: white;
 }
-
 
 .list-text {
     color: black;
@@ -523,14 +525,18 @@ footer p {
 
 @media only screen and (max-width: 1360px){
     
+    #btnContener {
+        text-align: center;
+    }
+
     #prev {
         left: 5px;
-        top: 33%;
+        top: auto;
       }
       
     #next {
         right: 5px;
-        top: 33%;
+        top: auto;
       }
     
     #pause{
@@ -547,7 +553,7 @@ footer p {
     }
 
     #map {
-        margin-inline-start: 10%;
+        margin-left: 10vw;
     }
 
     #responsible {
@@ -566,16 +572,21 @@ footer p {
     }
 }
 
+
 @media only screen and (max-width: 1000px){
+
+    #btnContener {
+        text-align: center;
+    }
 
     #prev {
         left: 0;
-        top: 29%;
+        top: auto;
       }
       
     #next {
         right: 0;
-        top: 29%;
+        top: auto;
       }
     
     #pause{
@@ -627,24 +638,33 @@ footer p {
         font-size: 0.4em;
     }
 
+    #btnContener {
+        text-align: center;
+    }
+
     #prev {
         left: 0;
-        top: 24%;
+        top: auto;
+        font-size: 30px;
+        text-align: center;
       }
       
     #next {
         right: 0;
-        top: 24%;
+        top: auto;
+        font-size: 30px;
       }
     
     #pause{
         margin-top: 17.3%;
-        right: 46%;
+        right: 48%;
+        font-size: 30px;
       }
       
     #play{
         margin-top: 17.3%;
-        right: 46%;
+        right: 48%;
+        font-size: 30px;
       }
 
 }

@@ -7,6 +7,7 @@ class Map {
         this.city = city;
         this.ajoutCarte();
         this.ajoutStations();
+        this.ajoutCity();
         return this;
     }
     
@@ -37,9 +38,15 @@ class Map {
                 console.error(req.status + " " + req.statusText + " " + url);
             }
         });
-        req.addEventListener("error", function () {
+        req.addEventListener("error", function () {//Détecte l'événement error et exécute le console.error...
             console.error("Erreur réseau avec l'URL " + url);
         });
-        req.send(null);
+        req.send(null);//send déclenche l'appel AJAX vers le serveur avec paramètres null
     }
-}
+
+//méthode pour ajouter automatiquement la ville en fonction de la ville rentrer en argument dans le constructeur
+    ajoutCity() {
+        document.getElementById("cityTitre").innerHTML = "<span>"+this.city+"</span>";
+        document.getElementById("para-expli").innerHTML = "<p>Nous proposons un service de location de vélo gratuitement sur toute la ville de "+this.city+".  <em>Cliquez sur une station</em></p>";
+    }
+}     

@@ -1,17 +1,17 @@
 /*-----------------SLIDER------------*/
 
-/*----------Création de la class Slider avec ses méthodes------------------*/
+/*----------Création de la class slider avec ses méthodes------------------*/
 class Slider {
 
     constructor(target, pictures, time) {
         this.pictures = pictures;//représente le tableau d'images
         this.time = time;// représente le temps de d'affichage entre les images
         document.getElementById(target).innerHTML = this.html(); //ajout html
-        this.image = 0;
+        this.image = 1;
         this.prev = document.querySelector("#prev");   // fleche gauche  
-        this.next = document.querySelector("#next");    // fleche droite
-        this.pause = document.querySelector("#pause");  // Bouton pause
-        this.play = document.querySelector("#play");    // Bouton play
+        this.next = document.querySelector("#next");   // fleche droite
+        this.pause = document.querySelector("#pause"); // Bouton pause
+        this.play = document.querySelector("#play");   // Bouton play
         this.controle(); //ajout eventlisteners
         this.animation;
         this.off;
@@ -21,7 +21,7 @@ class Slider {
 
 
     html() {
-        return "<section id='accueil'><div id='contenerImage'><img id='slideImage' src=" + this.pictures[0] + " alt='Diaporama'></div><br><div id='btnContainer'><em id='prev' class='fas fa-arrow-circle-left' ></em><em id='pause' class='fas fa-pause-circle' ></em><em id='play' class='fas fa-play-circle' ></em><em id='next' class='fas fa-arrow-circle-right' ></em></div></section>";
+        return "<section id='accueil'><div id='contenerImage'><img id='slideImage' src=" + this.pictures[0] + " alt='Diaporama'></div><br><div id='btnContener'><em id='prev' class='fas fa-arrow-circle-left' ></em><em id='pause' class='fas fa-pause-circle' ></em><em id='play' class='fas fa-play-circle' ></em><em id='next' class='fas fa-arrow-circle-right' ></em></div></section>";
     }
     
 //méthode pour l'animation
@@ -48,7 +48,7 @@ class Slider {
 
     precedent() { 
         document.getElementById("slideImage").src = this.pictures[this.image];
-        this.image === 0 ? this.image = 2 : this.image--; // Si le slider est à la première image (0) on passe a la 3ème image ici la (2), Sinon on va a l'image précédente et on décrémente de -1 pour cela
+        this.image === 0 ? this.image = 2 : this.image--;// Si le slider est à la première image (0) on passe a la 3ème image ici la (2), Sinon on va a l'image précédente et on décrémente de -1 pour cela
     }
 
 //méthode pour le controle des boutons via addEventListener

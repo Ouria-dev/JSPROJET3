@@ -7,14 +7,14 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="description" content="Véli-Vélo Agence de location gratuite de vélos sur la ville de Nantes">
     <meta name="author" content="Frédéric Garcia">
-    <link rel="canonical" href="https://www.ouria.website/PJ3/">
+    <link rel="canonical" href="https://www.ouria.website/pj3/">
     <!-- titre du site -->
-    <title>Location de vélos à Nantes</title>
+    <title>Location de vélos en France</title>
    	<!-- FAVICON DU SITE -->
     <link rel="shortcut icon" href="images/ico/favicon.png">
     <!-- Feuille de styles -->
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/Main.js" defer></script>
+    <script src="js/Main.js" defer></script><!--l'attribut "defer signifie que le navigateur peut charger le script en parallèle, sans stopper le rendu de la page HTML-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
     <!-- Polices et icones -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
                 <a href="#accueil">
                 <img src="images/logo.jpg" alt="logo de Véli-Vélo" id="logo"/></a>
                 <h1>V<em class="titleV">é</em>l<em>i</em>-V<em class="titleV">é</em>l<em>o</em></h1>
-                <p id="sousTitre">Le Vélo qu'il vous faut</p>
+                <p id="sousTitre">Le Vélo qu'il vous faut à <span id="cityTitre"></span></p>
 			</div>
 		<!-- Menu -->
 	       	<nav id="nav">
@@ -44,7 +44,7 @@
     </header>	
     
     <!-- SECTION SLIDER -->
-    <div id="mySectionSlider"></div>
+        <div id="mySectionSlider"></div>
 
     <!--  INFOS SECTION -->
         <!--Titre-->
@@ -55,7 +55,7 @@
                 <span class="fa fa-circle" aria-hidden="true"></span>
             </div>
                     <br>
-                <p id="para-expli">Nous proposons un service de location de vélo gratuitement sur toute la ville de Nantes. <em>Cliquez sur une station</em></p>
+                <p id="para-expli"></p>
                 <div>
                 <ul id="point">
                     <li id="circle1"><span class="list-text">Station avec plus de 5 vélos disponibles</span></li>
@@ -66,7 +66,7 @@
         </div>
     </section>
     
-    <section id="sectionCarte">
+    <div id="sectionCarte">
     <!-- SECTION MAP -->
         <div id="myMapSection">
         <!-- section pour la carte -->
@@ -81,18 +81,19 @@
         </div>
     <!-- SECTION RESERVATION -->
     <div id="myReservationSection"></div>
-    </section>
+    </div>
   
     <footer>
-        <p>Site réalisé dans le cadre de la formation OpenClassrooms Développeur Web</p>
+        <p>Site réalisé dans le cadre de la formation OpenClassrooms Développeur Web junior <a href="https://github.com/Ouria-dev/JSPROJET3" target="_blank">Github</a></p>
     </footer>
 
-    <!--------------------- JAVASCRIPT ----------------------------------------------------------------------------------------------------------------->
-        <script src="js/Slider.js"></script>
-        <script src="js/Map.js"></script>    
-        <script src="js/Station.js"></script>
-        <script src="js/Canvas.js"></script>
-        <script src="js/Reservation.js"></script>
+    <!-- JAVASCRIPT -->
+        <script src="js/Burger.js"></script>
+        <script src="js/jsClass/Slider.js"></script>
+        <script src="js/jsClass/Map.js"></script>    
+        <script src="js/jsClass/Station.js"></script>
+        <script src="js/jsClass/Canvas.js"></script>
+        <script src="js/jsClass/Reservation.js"></script>
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
     </body>
 </html>
